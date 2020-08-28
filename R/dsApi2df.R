@@ -100,9 +100,9 @@ pub2df <- function(P, format){
       df$TI[i] <- a["title"]
       
       ## Publication Year
-      df$PY <- a["year"]
+      df$PY[i] <- a["year"]
       
-      ## Co-Authors
+      ### Co-Authors
       AU_last_ind <- which(items == "authors.last_name")
       AU_first_ind <- which(items == "authors.first_name")
       name <-  paste(a[AU_last_ind], a[AU_first_ind], sep=", ")
@@ -130,11 +130,12 @@ pub2df <- function(P, format){
       ## Corresponding Author
       AU_corr <- which(items =="authors.corresponding")
       j <- which(a[AU_corr]=="TRUE")[1]
-      if (length(j)>0) {
-        df$RP[i] <- paste(Affiliations[j],country[j],sep=",",collapse=";")
-        df$AU1_UN[i] <- Affiliations[j]
-        df$AU1_CO[i] <- country[j]
-      }
+      if (is.na(j)) j <- 1
+      
+      df$RP[i] <- paste(Affiliations[j],country[j],sep=",",collapse=";")
+      df$AU1_UN[i] <- Affiliations[j]
+      df$AU1_CO[i] <- country[j]
+      
       
       
       ## Subject categories

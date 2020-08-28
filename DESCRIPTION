@@ -1,7 +1,7 @@
 Package: dimensionsR
 Title: Gathering Bibliographic Records from 'Digital Science
         Dimensions' Using 'DSL' API
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: 
     person(given = "Massimo",
            family = "Aria",
@@ -16,11 +16,11 @@ Encoding: UTF-8
 LazyData: true
 Imports: httr, jsonlite
 Suggests: bibliometrix, knitr, rmarkdown
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2020-03-19 17:25:22 UTC; massi
+Packaged: 2020-08-28 07:49:31 UTC; massimoaria
 Author: Massimo Aria [aut, cre] (<https://orcid.org/0000-0002-8517-9411>)
 Maintainer: Massimo Aria <massimo.aria@gmail.com>
 Repository: CRAN
-Date/Publication: 2020-03-20 10:10:10 UTC
+Date/Publication: 2020-08-28 09:40:03 UTC
