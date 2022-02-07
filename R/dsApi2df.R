@@ -89,12 +89,14 @@ pub2df <- function(P, format){
     #if (i%%100==0 | i==n) cat("Documents converted  ",i,"of",n, "\n")
     #print(i)
     utils::setTxtProgressBar(pb, i)
-    if (P[[i]]$type %in% c("article", "chapter")){
+    if (P[[i]]$type %in% c("article", "chapter", "preprint")){
       a <- list2char(P[[i]])
       
       items<- names(a)
       ## Document Type
       df$DT[i] <- a["type"]
+      
+      df$AB[i] <- a["abstract"]
       
       ## Title
       df$TI[i] <- a["title"]
